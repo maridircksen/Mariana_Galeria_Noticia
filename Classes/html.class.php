@@ -1,5 +1,4 @@
 <?php
-include_once "autoload.php";
 
     class Html {
         private $lang;
@@ -14,7 +13,7 @@ include_once "autoload.php";
         }
        
         function __toString() {
-            $html = "<!DOCTYPE html><html lang=\{$this->lang}>";
+            $html = "<!DOCTYPE html><html lang=\"{$this->lang}\">";
             foreach($this->listaElementos as $iListaElementos){
                 $html .= $iListaElementos;
             }
@@ -22,3 +21,5 @@ include_once "autoload.php";
             return $html;
         }
     }
+
+?>

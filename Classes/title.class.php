@@ -1,5 +1,4 @@
 <?php   
-include_once "autoload.php";
 
     class Title {
         private $value;
@@ -12,3 +11,5 @@ include_once "autoload.php";
             return "<title>{$this->value}</title>";
         }
     }
+
+?>

@@ -1,5 +1,4 @@
 <?php
-include_once "autoload.php";
 
     class Meta {
         private $charset;
@@ -10,14 +9,16 @@ include_once "autoload.php";
         function __construct($charset, $httpequiv, $content, $name) {
             if ($charset) {$this->charset = $charset;};
             if ($httpequiv) {$this->httpequiv = $httpequiv;};
-            if ($content) {$this->content = $content;};
             if ($name) {$this->name = $name;};
+            if ($content) {$this->content = $content;};
         }
 
         function __toString() {
             return "<meta charset=\"{$this->charset}\" 
-                          httpequiv=\"{$this->httpequiv}\" 
-                          content=\"{$this->content}\" 
-                          name=\"{$this->name}\">";
+                          http-equiv=\"{$this->httpequiv}\" 
+                          name=\"{$this->name}\" 
+                          content=\"{$this->content}\">";                 
         }
     }
+
+?>
