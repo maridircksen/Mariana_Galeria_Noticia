@@ -18,13 +18,13 @@
             $head->addElemento($meta2);
             $head->addElemento($meta3);
 
-            $title = new Title('Trabalho - Desenvolvimento Web II');
+            $title = new Title('Trabalho - Galeria de Notícias');
             $head->addElemento($title);
 
             $body = new Body();
             $html->addElemento($body);
 
-            $form = new Form();
+            $form = new Formulario();
             $body->addElemento($form);
 
             echo $html;

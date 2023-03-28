@@ -2,33 +2,32 @@
 session_start();
 
 // Verifique se há notícias armazenadas na sessão
+class Formulario {
+  Function __toString(){
+    if (!isset($_SESSION['noticias'])) {
+      $_SESSION['noticias'] = array();
+    }
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Adicionar a nova notícia
+    $imagem = $_POST['imagem'];
+    $titulo = $_POST['titulo'];
+    $conteudo = $_POST['conteudo'];
+    $data = $_POST['data'];
 
-if (isset($_SESSION['noticias'])) {
-  $noticias = $_SESSION['noticias'];
-}
-else {
-  $noticias = array();
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Adicionar a nova notícia
-  $imagem = $_POST['imagem'];
-  $titulo = $_POST['titulo'];
-  $conteudo = $_POST['conteudo'];
-  $data = $_POST['data'];
-
-  $noticia = array(
-    'imagem' => $imagem, 
-    'titulo' => $titulo, 
-    'conteudo' => $conteudo, 
-    'data' => $data
-);
-array_push($_SESSION['noticias'], $noticia);
+    $noticia = array(
+      'imagem' => $imagem, 
+      'titulo' => $titulo, 
+      'conteudo' => $conteudo, 
+      'data' => $data
+    );
+    
+    array_push($_SESSION['noticias'], $noticia);
       header('Location: '.$_SERVER['PHP_SELF'].'?sucesso=1');
       exit;
-
-      if (isset($_SESSION['noticias']) && !empty($_SESSION['noticias'])) {
+    }
+    
+    if (isset($_SESSION['noticias']) && !empty($_SESSION['noticias'])) {
           $adiciona_noticia = '';
   
           foreach ($_SESSION['noticias'] as $noticia) {
@@ -37,11 +36,13 @@ array_push($_SESSION['noticias'], $noticia);
                                   <p>'. $noticia['conteudo'].'</p>
                                   <p>'. $noticia['data'].'</p>
                            <hr>';
-          }else {
+          }
+      
+        }else {
 
             $adiciona_noticia = '<p>Não há notícias cadastradas!</p>';
           }
-    
+          
           $adiciona_noticia .= "<h1>Cadastrar Novas Notícias</h1>
                                <form action= ''  method='post'>
                               <label for='imagem'>Link da Imagem:</label>
