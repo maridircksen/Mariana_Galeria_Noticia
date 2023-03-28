@@ -46,16 +46,16 @@ class Formulario {
           $adiciona_noticia .= "<h1>Cadastrar Novas Notícias</h1>
                                <form action= ''  method='post'>
                               <label for='imagem'>Link da Imagem:</label>
-                              <input type='url' name='imagem' id='imagem' placeholder='Informe a URL da Imagem' autocomplete='off' required><br><br>>
+                              <input type='url' name='imagem' id='imagem' placeholder='Informe a URL da Imagem' autocomplete='off' required><br><br>
 
                               <label for='titulo'>Título:</label>
-                              <input type='text' name='titulo' id='titulo' placeholder='Título' autocomplete='off' required><br><br>>
+                              <input type='text' name='titulo' id='titulo' placeholder='Título' autocomplete='off' required><br><br>
 
                              <label for='conteudo'>Conteúdo:</label>
-                             <textarea name='conteudo' id='conteudo' placeholder='Descreva o Conteúdo' autocomplete='off' required><br><br>></textarea>
+                             <textarea name='conteudo' id='conteudo' placeholder='Descreva o Conteúdo' autocomplete='off' required></textarea><br><br>
 
                              <label for='data'>Data da Notícia:</label>
-                            <input type='date' name='data' id='data' placeholder='Data de Publicação' autocomplete='off' required><br><br>> 
+                            <input type='date' name='data' id='data' placeholder='Data de Publicação' autocomplete='off' required><br><br>
           
                             <input type='submit' value='Publicar Notícia'>
                        </form>";
@@ -63,8 +63,8 @@ class Formulario {
           return $adiciona_noticia;        
         }
       }
-    ?>
-        
 ?>
+        
+
 
 

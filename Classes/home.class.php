@@ -21,15 +21,16 @@
             $title = new Title('Trabalho - Galeria de Notícias');
             $head->addElemento($title);
 
+            $link = new Link ('./css/style.css', 'stylesheet');
+            $head->addElemento($link);
+
             $body = new Body();
             $html->addElemento($body);
 
             $form = new Formulario();
             $body->addElemento($form);
 
-            $link = new Link ('./css/style.css', 'stylesheet');
-            $head->addElemento($link);
-
+           
             echo $html;
    
         }
