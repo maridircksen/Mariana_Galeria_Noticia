@@ -27,6 +27,9 @@
             $form = new Formulario();
             $body->addElemento($form);
 
+            $link = new Link ('./css/style.css', 'stylesheet');
+            $head->addElemento($link);
+
             echo $html;
    
         }
